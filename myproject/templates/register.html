@@ -37,15 +37,16 @@
             font-weight: bold; 
             word-wrap: break-word;
             text-align: center;
+            margin: 0;
         }
 
         .box {
             width: 400px;
-            height: 510px;
+            height: 550px;
             background-color: #F5EEFC;
             border-radius: 30px;
             position: relative;
-            top: 120px;
+            top: 105px;
             left: 50%; 
             transform: translateX(-50%);
             display: grid;
@@ -124,6 +125,13 @@
         .button:hover {
             background: #a396eb;
         }
+
+        .error-mesage {
+            color: red;
+            font-size: 16px;
+            margin-left: 2px;
+            margin-top: 2px;
+        }
     </style>
 </head>
 
@@ -140,14 +148,20 @@
                 <div class="input">
                     <label>Username
                         <br>
-                        <input type="text" name="username" placeholder="Enter your name" />
+                        <input type="text" name="username" placeholder="Enter your name" minlength="3"/>
                     </label>
+                    {% if username_error %}
+                        <div class="error-mesage">{{ username_error }}</div>
+                    {% endif %}
                 </div>
                 <div class="input">
                     <label>Email
                         <br>
-                        <input type="email" name="email" placeholder="Enter your email" />
+                        <input type="email" name="email" placeholder="Enter your email" minlength="8"/>
                     </label>
+                    {% if email_error %}
+                        <div class="error-mesage">{{ email_error }}</div>
+                    {% endif %}
                 </div>
                 <div class="input">
                     <label>Password
@@ -163,3 +177,58 @@
         </div>   
     </div> 
 </body>
+
+<script>
+    // Function to validate form fields
+    function validateForm() {
+        var username = document.getElementsByName("username")[0].value;
+        var email = document.getElementsByName("email")[0].value;
+        var password = document.getElementsByName("password")[0].value;
+
+        if (username.trim() === '') {
+            showAlert("Username cannot be empty.");
+            return false;
+        }
+
+        if (email.trim() === '') {
+            showAlert("Email cannot be empty.");
+            return false;
+        }
+
+        if (password.trim() === '') {
+            showAlert("Password cannot be empty.");
+            return false;
+        }
+
+        if (password.length < 8) {
+            showAlert("Password must be at least 8 characters long.");
+            return false;
+        }
+
+        // If all validations pass, submit the form
+        return true;
+    }
+
+    // Attach form validation function to form submission event
+    document.querySelector('form').addEventListener('submit', function(event) {
+        if (!validateForm()) {
+            event.preventDefault(); // Prevent form submission if validation fails
+        }
+    });
+
+    // Check if the username already exists and show alert if needed
+    {% if user_exists %}
+        showAlert("Username already exists.");
+    {% endif %}
+
+    // Check if the email already exists and show alert if needed
+    {% if email_exists %}
+        showAlert("Email already exists.");
+    {% endif %}
+
+    // Function to display alert
+    function showAlert(message) {
+        alert(message);
+    }
+</script>
+

@@ -16,25 +16,26 @@ def index(request):
     return render(request, 'cover.html')
 
 # sign up function
+from django.contrib import messages
+
+from django.contrib import messages
+
 def register(request):  
-    # check if the page is rendered with a post method
     if request.method == 'POST':
         username = request.POST.get('username', None)
         email = request.POST.get('email', None)
         password = request.POST.get('password', None)
-        # check if email already exist in database
-        if User.objects.filter(email = email).exists():
-            messages.info(request, 'Email Already Used')
-            return redirect('register')
-        # check if username alread exist in database
-        elif User.objects.filter(username = username).exists():
-            messages.info(request, 'Username Already Used')
-            return redirect('register')
-        # info valid -> create user
+
+        if User.objects.filter(username=username).exists():
+            messages.info(request, 'Username already exists.')
+            username_error = 'Username already exists.'
+            return render(request, 'register.html', {'username_error': username_error})
+        elif User.objects.filter(email=email).exists():
+            messages.info(request, 'Email already exists.')
+            email_error = 'Email already exists.'
+            return render(request, 'register.html', {'email_error': email_error})
         else:
             user = User.objects.create_user(username=username, email=email, password=password)
-            # create user's profile
-            
             return redirect('login')
     else: 
         return render(request, 'register.html')
@@ -45,16 +46,26 @@ def login(request):
         username = request.POST['username']
         password = request.POST['password']
 
-        # xac minh user
+        # Xác minh user
         user = auth.authenticate(username=username, password=password)
 
-        # check if user is register or not
+        # Kiểm tra xem người dùng có tồn tại không
         if user is not None:
             auth.login(request, user)
             return redirect('wordsearch')
         else:
-            messages.info(request, 'Credentials Invalid')
-            return redirect('login.html')
+            try:
+                # Kiểm tra xem tên người dùng có tồn tại không
+                User.objects.get(username=username)
+                # Nếu tên người dùng tồn tại, nhưng mật khẩu không chính xác
+                messages.error(request, 'Incorrect password.')
+                login_password_error = 'Incorrect password.'
+                return render(request, 'login.html', {'login_password_error': login_password_error})
+            except User.DoesNotExist:
+                # Nếu người dùng không tồn tại
+                messages.error(request, 'Username does not exist.')
+                login_username_error = 'Username does not exist.'
+                return render(request, 'login.html', {'login_username_error': login_username_error})
     else:
         return render(request, 'login.html')
 

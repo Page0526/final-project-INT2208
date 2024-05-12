@@ -5,7 +5,7 @@ Nâng cao trải nghiệm học tập của bạn với trò chơi Word Search �
 ## Cài đặt
 1.Cài đặt thư viện:
 
-```pip install -r requirement.txt```
+```pip install -r requirements.txt```
 
 2.Cách cài đặt local database postgresql:
 

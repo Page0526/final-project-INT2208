@@ -91,6 +91,7 @@
             <label>Level<br>
               <input type="range" min="1" max = "8" value='1' class="level-bar" id="game-level" name="level-bar" placeholder="e.g. level 1">
             </label>
+            <span id="level-value">1</span>
           </div>
           <!-- <button type="button" class="button-create" id="create" onclick="toggleDropdownCreate()">Create</button> -->
           <p style="position: relative; top:-170px">Choose your mode</p>
@@ -127,7 +128,24 @@
 </body>
 
 <script>
-  var slider = document.getElementById("game-level");
+  const
+    range = document.getElementById('game-level'),
+    rangeV = document.getElementById('level-value'),
+    setValue = ()=>{
+      const
+        newValue = Number( (range.value - range.min) * 100 / (range.max - range.min) ), // cal new value
+        // cal new position
+        u_1 = 15.5;
+        d = -4;
+        newPosition = u_1 + (range.value-1)*d
+      rangeV.innerHTML = `<span>${range.value}</span>`; // set current level
+      rangeV.style.left = `calc(${newValue}% + (${newPosition}px))`; // set new position
+      // console.log(range.value);
+    };
+  document.addEventListener("DOMContentLoaded", setValue);
+  range.addEventListener('input', setValue);
+
+
   function toggleDropdownCreate() {
     var dropdownMenuCreate = document.getElementById("dropdownMenuCreate");
     dropdownMenuCreate.classList.toggle("show2");

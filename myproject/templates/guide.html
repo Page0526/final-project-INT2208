@@ -8,209 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400..800&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="{% static '/media/favicon.ico' %}">
-    <style>
-        body {
-        background-color: #FFF8FB;
-        font-family:  "Baloo Da 2", sans-serif;
-        margin: 0;
-        padding: 0;
-        height: 1150px;
-        position: relative;
-        }
-
-        .head {
-        left: 2%;
-        top: 2%;
-        position: fixed;
-        z-index: 1000;
-        }
-
-        .dropdown {
-        position: absolute;
-        left: 2%;
-        top: 30%;
-        display: inline-block;
-        }
-        
-        .dropbtn {
-        background-color: #7B68EE;
-        color: white;
-        font-size: 16px;
-        border-radius: 2px;
-        border: none;
-        }
-        
-        .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        }
-        
-        .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        }
-        
-        .dropdown-content a:hover {background-color: #f1f1f1;}
-        
-        .dropdown:hover .dropdown-content {display: block;}
-        
-        .dropdown:hover .dropbtn {background-color: #a396eb;}
-
-        main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 30vh;
-        }
-
-        h2 {
-            margin: 0;
-            text-align: center;
-            font: 600 53px/134% Baloo Da 2, sans-serif;
-            font-size: 45px;
-            color: #7B68EE;
-        }
-
-
-        .content1 {
-            width: 400px;
-            height: 400px;
-            position: absolute;
-            top: 180px;
-            left: 10%;
-        }
-
-        .content2 {
-            width: 400px;
-            height: 400px;
-            position: absolute;
-            top: 180px;
-            right: 10%;
-        }
-
-        .content3 {
-            width: 400px;
-            height: 400px;
-            position: absolute;
-            top: 500px;
-            left:10%;
-        }
-
-        .content4 {
-            width: 400px;
-            height: 400px;
-            position: absolute;
-            top: 500px;
-            right: 10%;
-            
-        }
-
-        .content5 {
-            position: absolute;
-            top: 850px;
-            left: 25%;
-            right: 25%;
-        }
-        
-        .square {
-            width: 50px;
-            height: 50px;
-            background: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0px 10px 15px #f5e3eb;
-        }
-
-        .p-title{
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        .text {
-            font-size: 18px;
-        }
-
-        .dropdown {
-            top: 0;
-            left: 0;
-            position: absolute;
-            left: 2%;
-            top: 30%;
-            display: inline-block;
-        }
-        
-        .dropbtn {
-        background-color: #7B68EE;
-        color: white;
-        font-size: 16px;
-        border-radius: 2px;
-        border: none;
-        }
-        
-        .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        }
-        
-        .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        }
-        
-        .dropdown-content a:hover {background-color: #f1f1f1;}
-        
-        .dropdown:hover .dropdown-content {display: block;}
-        
-        .dropdown:hover .dropbtn {background-color: #a396eb;}
-
-       @media (max-width: 1100px) {
-        .content1 {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .content2 {
-            left: 50%;
-            top:60%;
-            transform: translateX(-50%);
-        }
-        .content3 {
-            left: 50%;
-            top: 100%;
-            transform: translateX(-50%);
-        }
-        .content4 {
-            left: 50%;
-            top: 145%;
-            transform: translateX(-50%);
-        }
-
-        .content5 {
-            width: 400px;
-            height: 400px;
-            top: 181%;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-       }
-
-       .line {
-            background: #CCC4FB;
-            width: 200px;
-            height: 3px;
-            margin: 0;
-            border: none;
-       }
-
-    </style>
+    <link rel="icon" type="image/x-icon" href="{% static '/favicon.ico' %}">
+    <link rel="stylesheet" type='text/css' href="{%static '/guide.css' %}?version=1"> 
 </head>
 
 <body>
@@ -219,20 +18,23 @@
             <button class="dropbtn">&#9776;</button>
             <div class="dropdown-content">
                 <a href="home">Home</a>
-                <a href="guide">Guide to use</a>
+                <a href="guide">Introduction</a>
                 <a href="about_us">About us</a>
             </div>
           </div>
         </div>
     </div>
     <main>
-        <h2 class="guide-title">Guide to use</h2>
-        <hr class="line">
-        <div class="content">
+        <div class="header">
+            <h2 class="guide-title">Introduction</h2>
+            <hr class="line">
+            <div class="content"></div>
+        </div>
+        <div class="contents">
             <div class="content1">
                 <div class="square"></div>
                 <p class="p-title">Interactive Learning with AI</p>
-                <p class="text">Discover the power of AI in education with Almanack's Word Search game. Utilizing advanced AI algorithms, this tool offers a unique, interactive way to engage students in the classroom, making learning both fun and effective.</p>
+                <p class="text">Discover the power of AI in education with our Word Search game. Utilizing advanced AI algorithms, this tool offers a unique, interactive way to engage students in the classroom, making learning both fun and effective.</p>
             </div>
             <div class="content2">
                 <div class="square"></div>

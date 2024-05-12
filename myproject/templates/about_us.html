@@ -9,88 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400..800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="{% static '/favicon.ico' %}">
-  <style>
-    body {
-      background: #f5eefc;
-      position: relative;
-      font-family:  "Baloo Da 2", sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    .head {
-      left: 2%;
-      top: 2%;
-      position: fixed;
-      z-index: 1000;
-    }
-    .dropdown {
-      top: 0;
-      left: 0;
-      position: absolute;
-      left: 2%;
-      top: 30%;
-      display: inline-block;
-    }
-    
-    .dropbtn {
-      background-color: #7B68EE;
-      color: white;
-      font-size: 16px;
-      border-radius: 2px;
-      border: none;
-    }
-    
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f9f9f9;
-      min-width: 160px;
-    }
-    
-    .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-    
-    .dropdown-content a:hover {background-color: #f1f1f1;}
-    
-    .dropdown:hover .dropdown-content {display: block;}
-    
-    .dropdown:hover .dropbtn {background-color: #a396eb;}
-
-    .about-us-section {
-      text-align: center;
-    }
-  
-    .about-us-title {
-      margin-top: 60px;
-      font-family: 'Baloo Da 2', sans-serif;
-      font-size: 40px;
-      font-weight: 800;
-      color: #7b68ee;
-      line-height: 108%;
-    }
-  
-    .about-us-image {
-      width: 80%;
-      aspect-ratio: 2.13;
-      object-fit: cover;
-      border-radius: 15px;
-    }
-  
-    @media (max-width: 991px) {
-  
-      .about-us-title {
-        font-size: 35px;
-      }
-  
-      .about-us-image {
-        margin-top: 40px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" type='text/css' href="{%static '/about_us.css' %}?version=1"> 
 </head>
 <body>
   <div class="head">
@@ -103,9 +22,10 @@
         </div>
       </div>
     </div>
-</div>
+  </div>
   <section class="about-us-section">
     <h2 class="about-us-title">About us</h2>
-    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3c28816285f45703d5e82751af7a810d1ac400d5e17900219f8a3bfcd5169547?apiKey=f7ab5e5325374ba89ef4bfdcc8a1150e&" alt="Decorative image" class="about-us-image" />
+    <img src="{% static '/aboutus.png' %}" alt="Decorative image" class="about-us-image" />
   </section>
 </body>
+</html>

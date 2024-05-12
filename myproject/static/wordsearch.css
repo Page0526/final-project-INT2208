@@ -174,7 +174,7 @@ body {
 
 .box {
     width: 350px;
-    height: 490px;
+    height: 512px;
     top: 100px;
     display: flex;
     box-shadow: 10px 10px 25px #a396eb;
@@ -340,7 +340,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 }
 
 #create {
-    top: -175px;
+    top: -174px;
     width: 100px;
     position: relative;
     left: 85px;

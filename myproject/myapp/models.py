@@ -3,10 +3,13 @@ from django.conf import settings
 from django.contrib.auth.models import User
 
 # Create your models here.
+<<<<<<< HEAD
 class Profile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     username = models.TextField()
     profile_image = models.ImageField(upload_to='avatars/', blank=True) # save avatar
+=======
+>>>>>>> bbd66392acc56c97bdab12558c1bb7bf6521ca11
     
 # model to save PDF history
 class PDFHistory(models.Model):

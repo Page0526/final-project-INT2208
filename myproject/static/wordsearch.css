@@ -169,7 +169,7 @@ body {
     align-items: center;
     justify-content: flex-start;
     height: 40vh;
-    gap: 70px;
+    gap: 120px;
 }
 
 .box {
@@ -362,7 +362,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     width: 515px;
     height: 617px;
     right: 20%;
-    top: 225px;
+    top: 230px;
     transform: translateX(20%);
     box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.1);
 }
@@ -398,6 +398,12 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     }
     .img {
         top: 0px;
+    }
+}
+
+@media (min-width: 1200px) {    /* Change layout for larger screens */
+    .wrapper {
+        gap: 150px;   /* Change to horizontal */
     }
 }
 

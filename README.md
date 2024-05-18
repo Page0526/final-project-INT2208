@@ -1,4 +1,7 @@
 # Word Search Game using AI
+
+**Web**: https://wordsearch-zoqf.onrender.com
+
 ![image](https://github.com/Page0526/word-search-AI/assets/120580984/4cd6cf48-6fbc-4daf-bd54-e696da1feb71)
 ## Giới thiệu
 Nâng cao trải nghiệm học tập của bạn với trò chơi Word Search được hỗ trợ bởi AI. Được thiết kế dành cho mục đích giáo dục, trò chơi tương tác này tích hợp công nghệ AI để tạo ra các câu đố tìm kiếm từ hấp dẫn phù hợp với kế hoạch bài học của bạn, cải thiện kỹ năng từ vựng theo cách tương tác thú vị.
@@ -64,6 +67,10 @@ Nhập tên môn học, tên bài học và lớp học tương ứng rồi bấ
 **Sở thích**: Cô ấy thích đọc sách, du lịch và học hỏi về các phương pháp giảng dạy mới.
 
 **Mục tiêu sử dụng trang web**: Cô Lan muốn sử dụng trang web word-search game tích hợp AI để tạo ra các bài tập từ vựng tiếng Anh thú vị cho học sinh của mình. Cô ấy cũng muốn sử dụng trang web này để theo dõi tiến trình học tập của học sinh và để tạo ra các bài kiểm tra tùy chỉnh dựa trên từ vựng mà học sinh đã học. Cô ấy cũng muốn sử dụng trang web này để tạo ra một môi trường học tập cạnh tranh lành mạnh, nơi học sinh có thể thách thức nhau trong việc tìm kiếm từ.
+
+## Báo cáo và video demo
+
+**Link**: https://drive.google.com/drive/folders/1blx51hk8OEFYbu77SppHoK8LcOiUwkLl?usp=sharing
 
 ## Danh sách thành viên
 1. Phạm Thị Kim Huệ - 22022540
